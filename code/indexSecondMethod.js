@@ -26,34 +26,28 @@ function Product(productName, productPrice, productAmount) {
    }
 }
 
-Product.total = new Array();
-
-function finalCheck(allProducts) {
+function finalCheck() {
    let totalPrice = 0;
-   for (let i = 0; i < allProducts.length; i++) {
+   for (let i = 0; i < arguments.length; i++) {
 
       console.log(`
-      Product - ${allProducts[i].productName}
-      Price for 1 item - ${allProducts[i].productPrice}
-      Amount - ${allProducts[i].productAmount}
-      Total prices for this position - ${allProducts[i].allProductsPrice()}
+      Product - ${arguments[i].productName}
+      Price for 1 item - ${arguments[i].productPrice}
+      Amount - ${arguments[i].productAmount}
+      Total prices for this position - ${arguments[i].allProductsPrice()}
       `);
-      totalPrice = totalPrice + allProducts[i].allProductsPrice();
+      totalPrice = totalPrice + arguments[i].allProductsPrice();
 
    }
    console.log(`Total price - ${totalPrice}`);
 }
 
-let android = new Product("Samsung S23", 24000, 1);
+let iPhone = new Product("iPhone 11 pro", 24000, 1);
 
-Product.total.push(android);
 
-let asus = new Product("Asus F-16", 120000, 1);
+let macBook = new Product("MacBook 2021 pro max", 120000, 1);
 
-Product.total.push(asus);
 
-let marchal = new Product("Marchal 3", 5000, 4);
+let airPods = new Product("air Pods 3", 5000, 4);
 
-Product.total.push(marchal);
-
-finalCheck(Product.total);
+finalCheck(iPhone, macBook, airPods);
