@@ -20,10 +20,10 @@ function Product(productName, productPrice, productAmount) {
    this.productName = productName;
    this.productPrice = productPrice;
    this.productAmount = productAmount;
+}
 
-   Product.prototype.allProductsPrice = function () {
-      return this.productPrice * this.productAmount;
-   }
+Product.prototype.allProductsPrice = function () {
+   return this.productPrice * this.productAmount;
 }
 
 function finalCheck() {
